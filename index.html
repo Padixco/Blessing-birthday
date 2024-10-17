@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Blessing! 🎉</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <audio id="birthdayMusic" autoplay loop>
+        <source src="happy-birthday-song.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="container">
+        <h1>🎂 Happy Birthday, Blessing! 🎂</h1>
+        <p class="message">
+            **12am is here**, and guess what? It’s finally the day the world celebrates YOU, Blessing! 🕛🌙<br><br>
+
+            You know what’s wild? Somehow, you manage to be cooler than a midnight breeze and warmer than hot chocolate on a rainy day – **how do you do that?!** ☕❄️💖<br><br>
+
+            I hope today feels like a never-ending parade of cake, laughter, and random people singing “Happy Birthday” off-key. 🎂🎈 Let’s be honest, though... If there’s one thing we know for sure, it's that you’ll definitely blow out those candles and make a wish (or ten). No pressure, but I expect at least one of those wishes to be about me. 🥸✨<br><br>
+
+            Blessing, you’ve got that rare kind of magic – the one that makes everyone around you feel lighter and brighter. Your kindness, goofiness, and unstoppable vibe are unmatched. 🌟 Whether you’re cracking silly jokes or just being your amazing self, life with you feels like a never-ending adventure! 🚀💫<br><br>
+
+            Oh, and let’s not forget: **Growing older? Pfft, that’s just a fancy excuse to eat more cake.** 🍰🍭 So, eat like calories don’t exist today and laugh like it's the only thing on your to-do list. 🥂😄<br><br>
+
+            The year ahead is going to be full of epic moments and hilarious memories, and I know for sure you’ll be the star of it all. 🌠 Here’s to more spontaneous laughs, more embarrassing dance moves (don’t act like you don’t), and all the love you can carry! 💃🕺<br><br>
+
+            **Happy Birthday once again, Blessing!** May your day be so full of joy that even your phone can’t handle all the birthday wishes blowing up your notifications. 📱🎉
+        </p>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+    <script>
+        // Confetti animation
+        function shootConfetti() {
+            var count = 200;
+            var defaults = {
+                origin: { y: 0.7 }
+            };
+
+            function fire(particleRatio, opts) {
+                confetti(Object.assign({}, defaults, opts, {
+                    particles: Math.floor(count * particleRatio)
+                }));
+            }
+
+            fire(0.25, {
+                spread: 26,
+                startVelocity: 55,
+            });
+            fire(0.2, {
+                spread: 60,
+            });
+            fire(0.35, {
+                spread: 100,
+                decay: 0.91,
+                scalar: 1.2
+            });
+            fire(0.1, {
+                spread: 120,
+                decay: 0.92,
+                scalar: 1.5
+            });
+            fire(0.1, {
+                spread: 120,
+                decay: 0.8,
+                scalar: 2
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const name = prompt("Are you Blessing? Type 'yes' to continue!");
+
+            if (name.toLowerCase() === 'yes') {
+                alert("Welcome to your special birthday surprise, Blessing! 🎉");
+                shootConfetti(); // Start confetti when user confirms
+            } else {
+                alert("Oops! It seems you're not Blessing. This surprise is just for her! 🎈");
+                window.close();
+            }
+        });
+    </script>
+</body>
+</html>
